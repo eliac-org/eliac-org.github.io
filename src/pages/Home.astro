@@ -2,29 +2,139 @@
 import '../styles/globals.css';
 ---
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<div class="app-root">
-      <header class="top-nav" aria-label="site navigation">
-        <nav>
-          <ul class="nav-list">
-            <li>
-              <a class="nav-link"
-                href="https://innova-physics-upv.github.io"
-                target="_blank"
-                rel="noopener noreferrer">
-                About us
-              </a>
-            </li>
-            <li><a class="nav-link"  href="NormativaEliac.pdf" target="_blank" rel="noopener noreferrer ">Handbook</a></li>
-          </ul>
-        </nav>
-      </header>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<!-- Clash Grotesk via CDN (or replace with your local font) -->
+<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=clash-grotesk@500,600&display=swap" />
 
-      <main class="content" role="main">
-        <div class="site-grid">
-          <h1>ELIAC</h1>
-          <h2>European Linear Accelerator Challenge</h2>
-          <div class="cta-wrap">
-            <button class="cta" onclick="window.open('https://tally.so/r/mVrdGN', '_blank')">Enroll</button>          </div>
-        </div>
-      </main>
-    </div>
+<div class="app-root">
+
+  <!-- ══════════ HEADER / NAVBAR ══════════ -->
+  <header class="top-nav" aria-label="site navigation">
+    <a class="nav-logo" href="/">ELIAC</a>
+    <nav>
+      <ul class="nav-links">
+        <li><a class="nav-link">The Challenge</a></li>
+        <li><a class="nav-link">Resources</a></li>
+        <li><a class="nav-link">FAQs</a></li>
+        <li>
+          <a
+            class="nav-link"
+          >Aplply now</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ══════════ MAIN CONTENT ══════════ -->
+  <main role="main">
+
+    <!-- ── 1. HERO ── -->
+    <section class="hero" aria-labelledby="hero-title">
+      <h1 class="hero__title" id="hero-title">  Design the next generation of compact linear accelerators.</h1>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ── 2. WHAT IS IT? ── -->
+    <section class="section section--left" aria-labelledby="what-title">
+      <h2 class="section__title" id="what-title">What is it?</h2>
+      <div class="section__body">
+        <p>
+          The European Linear Accelerator Challenge is the
+          first international academic competition focused
+          on electron linear accelerators. The goal is to
+          achieve the complete design, simulation, and
+          validation of a functional LINAC. Aimed at
+          undergraduate and master's students in physics,
+          engineering or related fields.
+        </p>
+        <p>
+          See the full plan and phases of the challenge
+
+        </p>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ── 3. HOW ELIAC WORKS ── -->
+    <section class="how-section" aria-labelledby="how-title">
+      <h2 class="section__title" id="how-title">How ELIAC works</h2>
+
+      <div class="cards-grid">
+
+        <article class="card">
+          <span class="card__number">1</span>
+          <h3 class="card__title">Form your team</h3>
+          <p class="card__text">
+            Look for other students and join
+            forces to develop your technical
+            purpose and a faculty advisor to
+            take institutional responsibilities,
+            then your team is ready to submit
+            an application to the challenge.
+          </p>
+        </article>
+
+        <article class="card">
+          <span class="card__number">2</span>
+          <h3 class="card__title">Design your LINAC concept</h3>
+          <p class="card__text">
+            Review the ELIAC Handbook,
+            specify your LINAC application,
+            and distribute efforts across
+            evaluation modules-focus on
+            specific modules or propose a
+            complete design.
+          </p>
+        </article>
+
+        <article class="card">
+          <span class="card__number">3</span>
+          <h3 class="card__title">Submit, pitch, compete</h3>
+          <p class="card__text">
+            Attend checkpoints and submit
+            the required documentation. At the
+            final event, try your best showing
+            your design proposal; the prize is
+            just around the corner.
+          </p>
+        </article>
+
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ── 4. PURPOSE ── -->
+    <section class="purpose-section section--left" aria-labelledby="purpose-title">
+      <h2 class="section__title" id="purpose-title">Goals & Purpose</h2>
+      <div class="section__body">
+        <p>
+          Its primary objective is to provide a rigorous and
+          collaborative framework in which university teams can design complete
+          accelerator systems with real-world scientific and industrial
+          relevance.
+
+        </p>
+        <p>
+          Beyond the development of a specific accelerator model,
+          ELIAC seeks to build a pan-European ecosystem for
+          accelerator education.
+
+        </p>
+        <p>
+          The initiative promotes interdisciplinary collaboration,
+          technical excellence, and innovation, encouraging students
+          and academic institutions to work together across borders
+          and specialties. By fostering knowledge exchange and hands-
+          on design experience, ELIAC aims to strengthen the next
+          generation of accelerator scientists and engineers.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+</div>
