@@ -1,0 +1,75 @@
+---
+// WhatIsIt.astro
+---
+
+<section class="what-section contenedor" aria-labelledby="what-title">
+
+  <div class="what-section__intro">
+    <p>Welcome to ELIAC;</p>
+    <p>the <b>European Linear Accelerator Challenge</b> for</p>
+    <p>students in physics and engineering.</p>
+  </div>
+
+  <div class="what-section__content">
+    <h2 class="what-section__title" id="what-title">What is it?</h2>
+    <div class="what-section__body">
+      <p>
+        The European Linear Accelerator Challenge is the
+        first international academic competition focused
+        on electron linear accelerators. The goal is to
+        achieve the complete design, simulation, and
+        validation of a functional LINAC. Aimed at
+        undergraduate and master's students in physics,
+        engineering or related fields.
+      </p>
+      <p>See the full plan and phases of the challenge</p>
+    </div>
+  </div>
+
+</section>
+
+<style>
+  .what-section {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .what-section__intro {
+    font-family: var(--ff-display);
+    font-size: var(--fs-lead);
+    font-weight: 400;
+    color: var(--c-text);
+    opacity: 0.85;
+    line-height: 1.6;
+    text-align: center;
+  }
+
+  .what-section__title {
+    font-family: var(--ff-display);
+    font-size: var(--fs-h2);
+    font-weight: 500;
+    color: var(--c-text);
+    line-height: 1;
+    letter-spacing: -0.02em;
+    margin-bottom: 2rem;
+    max-width: 625px;
+  }
+
+  .what-section__body {
+    font-family: var(--ff-body);
+    font-size: var(--fs-body);
+    font-weight: 500;
+    color: var(--c-text);
+    opacity: 0.85;
+    max-width: 625px;
+    line-height: 1.6;
+  }
+
+  .what-section__body p + p { margin-top: 1.25rem; }
+
+  @media (max-width: 390px) {
+    .what-section__title,
+    .what-section__body { max-width: 350px; }
+  }
+</style>
