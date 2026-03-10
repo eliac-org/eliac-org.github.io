@@ -4,7 +4,7 @@
 
 <section class="purpose-section contenedor" aria-labelledby="purpose-title">
   <h2 class="purpose-section__title" id="purpose-title">Goals & Purpose</h2>
-  <div class="purpose-section__body">
+  <div class="purpose-section__body flow text-muted">
     <p>
       Its primary objective is to provide a rigorous and
       collaborative framework in which university teams can design complete
@@ -28,30 +28,16 @@
 
 <style>
   .purpose-section__title {
-    font-family: var(--ff-display);
-    font-size: var(--fs-h2);
-    font-weight: 500;
-    color: var(--c-text);
-    line-height: 1;
-    letter-spacing: -0.02em;
     margin-bottom: 2rem;
     max-width: 787px;
   }
 
   .purpose-section__body {
-    font-family: var(--ff-body);
-    font-size: var(--fs-body);
-    font-weight: 500;
-    color: var(--c-text);
-    opacity: 0.85;
     max-width: 787px;
-    line-height: 1.6;
   }
-
-  .purpose-section__body p + p { margin-top: 1.25rem; }
 
   @media (max-width: 390px) {
     .purpose-section__title,
-    .purpose-section__body { max-width: 350px; }
+    .purpose-section__body { max-width: 100%; }
   }
 </style>

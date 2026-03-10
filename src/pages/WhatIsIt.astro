@@ -4,7 +4,7 @@
 
 <section class="what-section contenedor" aria-labelledby="what-title">
 
-  <div class="what-section__intro">
+  <div class="what-section__intro text-muted">
     <p>Welcome to ELIAC;</p>
     <p>the <b>European Linear Accelerator Challenge</b> for</p>
     <p>students in physics and engineering.</p>
@@ -12,7 +12,7 @@
 
   <div class="what-section__content">
     <h2 class="what-section__title" id="what-title">What is it?</h2>
-    <div class="what-section__body">
+    <div class="what-section__body flow text-muted">
       <p>
         The European Linear Accelerator Challenge is the
         first international academic competition focused
@@ -39,34 +39,17 @@
     font-family: var(--ff-display);
     font-size: var(--fs-lead);
     font-weight: 400;
-    color: var(--c-text);
-    opacity: 0.85;
-    line-height: 1.6;
     text-align: center;
   }
 
   .what-section__title {
-    font-family: var(--ff-display);
-    font-size: var(--fs-h2);
-    font-weight: 500;
-    color: var(--c-text);
-    line-height: 1;
-    letter-spacing: -0.02em;
     margin-bottom: 2rem;
     max-width: 625px;
   }
 
   .what-section__body {
-    font-family: var(--ff-body);
-    font-size: var(--fs-body);
-    font-weight: 500;
-    color: var(--c-text);
-    opacity: 0.85;
     max-width: 625px;
-    line-height: 1.6;
   }
-
-  .what-section__body p + p { margin-top: 1.25rem; }
 
   @media (max-width: 390px) {
     .what-section__title,

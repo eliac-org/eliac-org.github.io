@@ -55,10 +55,24 @@ body {
   line-height: 1.4;
 }
 
-/* ─── Contenedor ─────────────────────────────────────────
- *  Clase abstracta que centraliza el padding/margin de
- *  todas las secciones. Evita repetir lógica de layout.
- * ─ *────────────────────────────────────────────────────────── */
+/* ─── Tipografía global de encabezados ──────────────────── */
+h1, h2, h3 {
+  font-family: var(--ff-display);
+  font-weight: 500;
+}
+h1 { font-size: var(--fs-h1); line-height: 0.92; letter-spacing: -0.03em; }
+h2 { font-size: var(--fs-h2); line-height: 1;    letter-spacing: -0.02em; }
+h3 { font-size: var(--fs-h3); line-height: 1; }
+
+/* ─── Utilidades ────────────────────────────────────────── */
+.text-muted {
+  opacity: 0.85;
+  line-height: 1.6;
+}
+
+.flow p + p { margin-top: 1.25rem; }
+
+/* ─── Contenedor ───────────────────────────────────────── */
 .contenedor {
   width: 100%;
   max-width: var(--container);
@@ -95,7 +109,7 @@ body {
   max-width: var(--container);
 }
 
-/* ─── Tablet: 391px – 1511px ────────────────────────────── */
+/* ─── Tablet ────────────────────────────── */
 @media (max-width: 1511px) {
   :root {
     --fs-h1:   5rem;
@@ -106,7 +120,7 @@ body {
   }
 }
 
-/* ─── Mobile: max-width 390px ───────────────────────────── */
+/* ─── Mobile ───────────────────────────── */
 @media (max-width: 390px) {
   :root {
     --fs-h1:   2rem;
@@ -119,6 +133,4 @@ body {
     --nav-h:   60px;
     --space-section: 3rem;
   }
-
-
 }

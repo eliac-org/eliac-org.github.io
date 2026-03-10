@@ -1,6 +1,5 @@
 ---
 // pages/Home.astro
-import Layout from '../layouts/Layout.astro';
 import WhatIsIt from './WhatIsIt.astro';
 import HowItWorks from './HowELIACWork.astro';
 import Purpose from './Goals&Purpose.astro';
@@ -24,8 +23,6 @@ import Purpose from './Goals&Purpose.astro';
 
   <Purpose />
 
-</Layout>
-
 <style>
   .hero {
     min-height: 100vh;
@@ -41,12 +38,6 @@ import Purpose from './Goals&Purpose.astro';
   }
 
   .hero__title {
-    font-family: var(--ff-display);
-    font-size: var(--fs-h1);
-    font-weight: 500;
-    color: var(--c-text);
-    line-height: 0.92;
-    letter-spacing: -0.03em;
     margin-bottom: 1.5rem;
   }
 
