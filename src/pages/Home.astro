@@ -1,8 +1,11 @@
 ---
 // pages/Home.astro
 import WhatIsIt from './WhatIsIt.astro';
-import HowItWorks from './HowELIACWork.astro';
+import HowELIACWorks from './HowELIACWork.astro';
 import Purpose from './Goals&Purpose.astro';
+import TheTeamBehindIt from './TheTeamBehindIt.astro';
+import Prizes from './Prizes&Benefits.astro';
+import Sponsors from './Sponsors&Partners.astro';
 ---
 
   <section class="hero" aria-labelledby="hero-title">
@@ -17,11 +20,23 @@ import Purpose from './Goals&Purpose.astro';
 
   <div class="divider"></div>
 
-  <HowItWorks />
+  <HowELIACWorks />
 
   <div class="divider"></div>
 
   <Purpose />
+
+  <div class="divider"></div>
+
+  <TheTeamBehindIt />
+
+  <div class="divider"></div>
+
+  <Prizes />
+
+  <div class="divider"></div>
+
+  <Sponsors />
 
 <style>
   .hero {
