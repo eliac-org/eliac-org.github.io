@@ -1,0 +1,70 @@
+---
+// HowELIACWorks.astro
+
+const steps = [
+  {
+    number: "1",
+    title: "Form your team",
+    text: "Look for other students and join forces to develop your technical purpose and a faculty advisor to take institutional responsibilities, then your team is ready to submit an application to the challenge.",
+  },
+  {
+    number: "2",
+    title: "Design your LINAC concept",
+    text: "Review the ELIAC Handbook, specify your LINAC application, and distribute efforts across evaluation modules — focus on specific modules or propose a complete design.",
+  },
+  {
+    number: "3",
+    title: "Submit, pitch, compete",
+    text: "Attend checkpoints and submit the required documentation. At the final event, try your best showing your design proposal; the prize is just around the corner.",
+  },
+];
+---
+
+<section class="contenedor">
+  <h2 class="h2-margin">How ELIAC works</h2>
+
+  <div class="slider-movil">
+    {steps.map((step) => (
+      <div class="card">
+        <span class="card-number">{step.number}</span>
+        <h3 class="card-title">{step.title}</h3>
+        <p class="card-text">{step.text}</p>
+      </div>
+    ))}
+  </div>
+</section>
+
+<style>
+  .slider-movil {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(15rem, 1fr));
+    justify-content:center;
+    gap: 1rem;
+  }
+  .card-number {
+    font-family: var(--ff-display);
+    font-size: var(--fs-h4);
+    font-weight: 600;
+  }
+  @media (max-width: 1511px) {
+    .slider-movil {
+      grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    }
+  }
+
+  @media (max-width: 390px) {
+    .slider-movil {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      gap: 1.5rem;
+      padding-bottom: 2rem;
+      justify-content: flex-start;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+    .slider-movil::-webkit-scrollbar { 
+      display: none; 
+    }
+  }
+</style>
