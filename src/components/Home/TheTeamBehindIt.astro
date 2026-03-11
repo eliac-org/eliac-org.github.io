@@ -5,7 +5,11 @@
 <section class="contenedor team-section" aria-labelledby="team-title">
   <h2 id="team-title" class="h2-margin">The team behind it</h2>
 
-  <div class="team-image-placeholder"></div>
+  <img 
+    src="/team.jpg" 
+    alt="Integrantes del equipo Innova Physics UPV" 
+    class="team-image"
+  />
 
   <div class="team-content flow">
     <p class="lead-text">
@@ -21,6 +25,11 @@
       related technologies.
     </p>
   </div>
+  <img 
+    src="/LogoInnova.svg"
+    class="logo" 
+    alt="Logo de Innova Physics UPV"   
+  />
 </section>
 
 <style>
@@ -32,11 +41,7 @@
     gap: var(--gap);
   }
 
-  /* Placeholder temporal: reemplazar por etiqueta img al 100% */
-  .team-image-placeholder {
-    width: 100%;
-    min-height: 715px;
-    background: var(--c-slate);
+  .team-image {
     border-radius: 30px;
   }
 
@@ -49,8 +54,9 @@
     font-size: var(--fs-h3);
   }
 
-  @media (max-width: 390px) {
-    .team-image-placeholder { 
+  /* Ajuste para móviles */
+  @media (max-width: 480px) {
+    .team-image { 
       min-height: 220px;
     }
   }

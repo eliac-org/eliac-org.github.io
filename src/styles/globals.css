@@ -171,22 +171,88 @@ h3 { font-size: var(--fs-h3); line-height: 1; }
   height: 20px;
   fill: currentColor;
 }
+
+  .link {
+    color: var(--c-white);
+    text-decoration: underline;
+  }
+  .link:hover { 
+    color: var(--c-accent); 
+  }
 /* ─── Reset de Imágenes ─── */
 img { width: 100%; height: auto; object-fit: cover; display: block; }
 
+/* ─── Logos ─── */
+.logo {
+  width: 240px;
+}
+
 /* ─── Tarjetas ───────────────────────────────────────── */
 
-  .card {
-    background: var(--c-slate);
-    border-radius: 30px;
-    padding: 2.5rem 2rem;
-    /*box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.25);*/
-    display: flex;
-    flex-direction: column;
-    gap: var(--gap, 2.5rem);
-    height: 100%;
-    text-align: center;
-  }
+.card {
+  position: relative;
+  overflow: hidden;
+
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(8px);
+
+  border-radius: 30px;
+  padding: 2.5rem 2rem;
+
+  border: 1px solid color-mix(in srgb, var(--c-white) 8%, transparent);
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap, 2.5rem);
+  height: 100%;
+  text-align: center;
+
+  transition: box-shadow .25s ease;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--c-white) 14%, transparent),
+    color-mix(in srgb, var(--c-white) 4%, transparent) 40%,
+    transparent 70%
+  );
+
+  pointer-events: none;
+}
+
+.card::after {
+  content: "";
+  position: absolute;
+  inset: -6px;
+  border-radius: inherit;
+
+  background: linear-gradient(
+    120deg,
+    var(--c-blue-light),
+    var(--c-accent)
+  );
+
+  opacity: 0;
+  filter: blur(80px);
+  z-index: -1;
+
+  transition: opacity 2s ease;
+}
+
+.card:hover {
+  box-shadow: 0 16px 32px rgba(0,0,0,0.22);
+}
+
+.card:hover::after {
+  opacity: 0.6;
+}
+
   .card-title {
     font-size: var(--fs-h4);
     font-weight: 500;
@@ -217,7 +283,7 @@ img { width: 100%; height: auto; object-fit: cover; display: block; }
 }
 
 /* ─── Mobile ───────────────────────────── */
-@media (max-width: 390px) {
+@media (max-width: 480px) {
   :root {
     --fs-h1:      2rem;     /* 32px */
     --fs-h2:      1.875rem; /* 30px */
@@ -227,6 +293,7 @@ img { width: 100%; height: auto; object-fit: cover; display: block; }
     --fs-h5:      1.25rem;  /* 20px (Footer) */
     --fs-micro:   1rem;     /* 16px (Footer) */
     
+    --container: 90%;
     --nav-h:         3.75rem; /* 60px */
     --space-section: 3rem;
     --gap:           1.25rem;

@@ -1,0 +1,135 @@
+---
+// Footer.astro
+---
+
+<footer>
+
+  <div class="contenedor">
+    <div class="grid-split footer-grid">
+
+      <!-- Mitad izquierda: brand + CTA -->
+      <div class="footer-left">
+        <div>
+          <p><strong>ELIAC</strong> - European Linear<br/>Accelerator Challenge</p>
+          <p class="text-muted" style="margin-top: 1.5rem; font-size: var(--fs-micro);">Organised by Innova Physics</p>
+        </div>
+        <div>
+          <p style="font-weight: 600; margin-bottom: 1.5rem;">Want to be part of the history?</p>
+          <div class="footer-btns">
+            <a class="btn btn-slate btn-icon" href="#">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
+              </svg>
+              Full briefing
+            </a>
+            <a class="btn btn-light" href="#">Get involved</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mitad derecha: 3 columnas de links -->
+      <div class="footer-right">
+        <div>
+          <p style="font-weight: 600; margin-bottom: 1.5rem;">Follow us!</p>
+          <ul class="footer-links">
+            <li><a class="link" href="#">Instagram</a></li>
+            <li><a class="link" href="#">LinkedIn</a></li>
+            <li><a class="link" href="#">TikTok</a></li>
+          </ul>
+        </div>
+        <div>
+          <p style="font-weight: 600; margin-bottom: 1.5rem;">Contact</p>
+          <ul class="footer-links">
+            <li><a class="link" href="mailto:eliac2026@gmail.com">eliac2026@gmail.com</a></li>
+            <li class="text-muted" style="font-size: var(--fs-micro);">UPV. Avinguda Emilio Attard,<br/>Algirós, 46022 Valencia (Spain)</li>
+          </ul>
+        </div>
+        <div>
+          <ul class="footer-links">
+            <li><a class="link" href="#">Legal notice</a></li>
+            <li><a class="link" href="#">Cookies policy</a></li>
+            <li><a class="link" href="#">Private policy</a></li>
+            <li><a class="link" href="#">Terms of use</a></li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="footer-banner">
+    <div class="contenedor" style="padding-block: 0;">
+      <span class="footer-giant">ELIAC</span>
+    </div>
+  </div>
+
+</footer>
+
+<style>
+  .footer-grid { align-items: start; }
+
+  .footer-left {
+    display: flex;
+    gap: 3rem;
+    padding-right: 3rem;
+    border-right: 1px solid rgba(255,255,255,0.2);
+  }
+
+  .footer-left > div { flex: 1; }
+
+  .footer-right {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    font-size: var(--fs-micro);
+  }
+
+  .footer-btns {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .footer-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  /* ── Banner gigante ── */
+  .footer-banner {
+    background: linear-gradient(
+      to top,
+      #FFCC04 0%, #00AA7A 4.26%, #5DBED4 6.22%,
+      #1480C4 15.62%, #1F3F85 22.74%, #1A2139 47.59%, #181823 100%
+    );
+    overflow: hidden;
+  }
+
+  .footer-giant {
+    display: block;
+    font-family: var(--ff-display);
+    font-weight: 700;
+    text-align: center;
+    line-height: 0.8;
+    font-size: clamp(8rem, 28vw, 500px);
+    letter-spacing: 0.05em;
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 1200px) {
+    .footer-left {
+      border-right: none;
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+      padding-right: 0;
+      padding-bottom: 3rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .footer-left { flex-direction: column; gap: 2rem; }
+    .footer-right { flex-wrap: wrap; }
+    .footer-giant { text-align: left; }
+  }
+</style>

@@ -1,6 +1,8 @@
 ---
 // Layout.astro
 import '../styles/globals.css';
+import Header from './Header.astro';
+import Footer from './Footer.astro';
 ---
 <!doctype html>
 <html lang="en">
@@ -15,65 +17,13 @@ import '../styles/globals.css';
   </head>
   <body>
 
-    <header class="top-nav" aria-label="site navigation">
-      <a class="nav-logo" href="/">ELIAC</a>
-      <nav>
-        <ul class="nav-links">
-          <li><a class="nav-link">The Challenge</a></li>
-          <li><a class="nav-link">Resources</a></li>
-          <li><a class="nav-link">FAQs</a></li>
-          <li><a class="nav-link">Apply now</a></li>
-        </ul>
-      </nav>
-    </header>
 
+    <Header />
     <slot />
-
+    <Footer />
   </body>
 </html>
 
 <style>
-  .top-nav {
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    height: var(--nav-h);
-    background: var(--c-bg);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 clamp(1.25rem, 4vw, 3rem);
-    border-bottom: 1px solid rgba(255,255,255,0.08);
-  }
 
-  .nav-logo {
-    font-family: var(--ff-display);
-    font-size: var(--fs-logo);
-    font-weight: 500;
-    color: var(--c-text);
-    text-decoration: none;
-    letter-spacing: -0.01em;
-  }
-
-  .nav-links {
-    list-style: none;
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-  }
-
-  .nav-link {
-    font-family: var(--ff-body);
-    font-size: 1.125rem;
-    font-weight: 500;
-    color: var(--c-text);
-    text-decoration: none;
-    transition: color 0.2s;
-    cursor: pointer;
-  }
-  .nav-link:hover { color: var(--c-accent); }
-
-  @media (max-width: 390px) {
-    .nav-links { gap: 1rem; }
-  }
 </style>
