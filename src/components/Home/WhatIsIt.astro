@@ -1,0 +1,41 @@
+---
+// WhatIsIt.astro
+---
+
+<section class="contenedor">
+
+  <header class="text-muted welcome_to_eliac">
+    <p>Welcome to ELIAC;</p>
+    <p>the <b>European Linear Accelerator Challenge</b> for</p>
+    <p>students in physics and engineering.</p>
+  </header>
+  
+    <h2>What is it?</h2>
+  <div class="grid-split">
+    <div class="content flow text-muted">
+      <p>
+        The European Linear Accelerator Challenge is the
+        first international academic competition focused
+        on electron linear accelerators. The goal is to
+        achieve the complete design, simulation, and
+        validation of a functional LINAC. Aimed at
+        undergraduate and master's students in physics,
+        engineering or related fields.
+      </p>
+      <p>See the full plan and phases of the challenge</p>
+    </div>
+    <div class="image-container">
+  <img src="/assets/what-is-it.png" alt="Illustration of a linear accelerator">
+  </div>
+  </div>
+  
+</div>
+
+</section>
+
+<style>
+  .welcome_to_eliac{ text-align: center;}
+  section { display: flex; flex-direction: column; gap: 3rem; }
+  .content { max-width: 45ch; }
+  .image-container { display: flex; justify-content: center; background-color: bisque;}
+</style>
