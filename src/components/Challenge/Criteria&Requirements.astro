@@ -1,0 +1,124 @@
+---
+const sections = [
+  {
+    title: "Participant Requirements",
+    items: ["Each participant may be a member of one team only", "Only undergraduate or master's degree students are eligible", "Participants may compete for maximum five cycles", "Team members must be at least 18 years old"]
+  },
+  {
+    title: "Team Composition",
+    items: ["Each team must designate one Team Captain as primary contact", "Teams may have maximum 50 members", "Members organize internally by skills and project needs", "At least one Faculty Advisor required per team"]
+  },
+  {
+    title: "Institutional Limitations",
+    items: ["Each university may register one official team only", "Multi-university teams permitted under single host institution", "Teams must develop projects independently", "Faculty advisors limited to mentorship role only"]
+  }
+];
+---
+
+<section class="criteria-outer-wrapper">
+  <div class="criteria-content">
+    <h2 class="section-title">Criteria & Requirements</h2>
+    
+    <div class="three-column-layout">
+      {sections.map((section) => (
+        <div class="criteria-column">
+          <h3>{section.title}</h3>
+          <ul>
+            {section.items.map((item, index) => (
+              <li>
+                <span class="index">{index + 1}.</span>
+                <p>{item}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+
+    <div class="download-footer">
+      <p>Learn about all the regulations in the full document about the challenge:</p>
+      <a href="/NormativaEliac.pdf" class="download-button" download>Download full briefing</a>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Aseguramos que el fondo sea total y no un rectángulo cortado */
+  .criteria-outer-wrapper {
+    
+    width: 100%;
+    color: white;
+    padding: 100px 0;
+    display: block; /* Forzamos que se comporte como bloque */
+  }
+
+  .criteria-content {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+
+  .section-title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 80px;
+  }
+
+  .three-column-layout {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important; /* 3 columnas iguales */
+  gap: 40px !important;
+  width: 100% !important;
+  max-width: 1200px;
+  margin: 0 auto;
+  }
+
+  .criteria-column h3 {
+    font-size: 1.1rem;
+    text-decoration: underline;
+    text-underline-offset: 10px;
+    margin-bottom: 30px;
+    font-weight: 500;
+  }
+
+  ul { list-style: none; padding: 0; }
+  
+  li {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+    align-items: flex-start;
+  }
+
+  .index { font-weight: bold; }
+  
+  p {
+    margin: 0;
+    font-size: 0.95rem;
+    opacity: 0.8;
+    line-height: 1.5;
+  }
+
+  .download-footer {
+    text-align: center;
+    margin-top: 100px;
+  }
+
+  .download-button {
+    display: inline-block;
+    background-color: #1e222d;
+    color: white;
+    padding: 12px 35px;
+    border-radius: 100px;
+    text-decoration: none;
+    margin-top: 20px;
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+
+  /* Si la pantalla es muy pequeña, entonces sí permitimos 1 columna */
+  @media (max-width: 1000px) {
+    .three-column-layout {
+      grid-template-columns: 1fr !important;
+    }
+  }
+</style>
