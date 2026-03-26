@@ -1,5 +1,6 @@
 ---
-// src/components/Challenge/Timeline.astro
+// Timeline.astro
+
 const events = [
   { 
     date: "April 1st, 2026", 
@@ -42,6 +43,15 @@ const events = [
 ];
 ---
 
+<section class="text-muted welcome_to_eliac">
+  <div class="hero-content">
+    <h4>Here you will find all the phases, criteria and</h4>
+    <h4>requirements to participate in <b>the first edition of</b></h4>
+    <p43><b>ELIAC</b>. We will guide you through the entire process.</h4>
+  </div>
+
+</section>
+
 <section class="timeline-section">
   <h2>Format & Phases</h2>
   <div class="timeline-container">
@@ -62,8 +72,10 @@ const events = [
 </section>
 
 <style>
+  .welcome_to_eliac{ text-align: center; color: white;}
+
   .timeline-section { padding: 4rem 2rem; color: white; max-width: 1000px; margin: auto; }
-  .timeline-container { position: relative; padding-left: 150px; }
+  .timeline-container { position: relative; padding-left: 190px; }
   
   /* La línea degradada */
   .main-line {
@@ -75,10 +87,10 @@ const events = [
   }
 
   .timeline-item { display: flex; align-items: flex-start; margin-bottom: 4rem; position: relative; }
-  .date { width: 140px; text-align: right; margin-right: 40px; font-weight: 300; opacity: 0.8; }
+  .date { width: 140px; text-align: right; margin-right: 30px; font-weight: 300; opacity: 0.8; }
   .dot { 
     width: 16px; height: 16px; background: white; border-radius: 50%; 
-    position: absolute; left: 10px; top: 5px; z-index: 2;
+    position: absolute; left: -30px; top: 5px; z-index: 2;
     box-shadow: 0 0 10px rgba(255,255,255,0.5);
   }
   .content { flex: 1; }
