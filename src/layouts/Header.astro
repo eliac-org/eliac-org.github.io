@@ -15,17 +15,16 @@ import MobileMenu from './MobileMenu.svelte';
   <!-- Desktop nav (visible > 390px) -->
   <nav class="nav-desktop" aria-label="Primaria">
     <ul class="nav-links">
-      <a class="nav-link" href="/challenge-page">The Challenge</a>
-      <!--<li><a class="nav-link" href="/resources">Resources</a></li>
-      <li><a class="nav-link" href="/faqs">FAQs</a></li>
-      <li>-->
-        <a class="btn btn-light btn-lg" href="/get-involved">Get involved</a>
+      <a class="nav-link" href="/Challenge">The Challenge</a>
+      <a class="nav-link" href="/Resources">Resources</a>
+      <a class="nav-link" href="/faqs">FAQs</a>
+      <a class="btn btn-light btn-lg" href="/get-involved">Get involved</a>
     </ul>
   </nav>
 
   <!-- Mobile overlay — Svelte gestiona la reactividad -->
    
-  <!--MobileMenu client:load /-->
+  <MobileMenu client:load/>
 
 </header>
 
@@ -94,6 +93,6 @@ import MobileMenu from './MobileMenu.svelte';
 .nav-link:hover { color: var(--c-accent); }
 
 @media (max-width: 480px) {
-  /*.nav-desktop { display: none; } */
+  .nav-desktop { display: none; }
 }
 </style>

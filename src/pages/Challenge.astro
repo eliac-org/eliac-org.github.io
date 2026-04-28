@@ -1,13 +1,14 @@
 ---
+import Layout from '../layouts/Layout.astro';
 import Timeline from '../components/Challenge/Timeline.astro';
 import CriteriaRequirements from '../components/Challenge/Criteria&Requirements.astro';
 import InternationalJury from '../components/Challenge/InternationalJury.astro';
 ---
-
+<Layout title="Challenge – ELIAC">
 <main class="challenge-page-wrapper">
   <section class="challenge-hero">
     <div class="hero-content">
-      <h1>Follow the challenge from first spark to near-light speed.</h1>
+      <h1 class="hero-title">Follow the challenge from first spark to near-light speed.</h1>
     </div>
   </section>
 
@@ -25,6 +26,8 @@ import InternationalJury from '../components/Challenge/InternationalJury.astro';
 
   <InternationalJury />
 </main>
+
+</Layout>
 
 <style>
   .challenge-page-wrapper {

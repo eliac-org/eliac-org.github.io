@@ -1,0 +1,139 @@
+---
+// Resources.astro
+import Layout from '../layouts/Layout.astro';
+import OfficialDocuments from '../components/Resources/OfficialDocuments.astro';
+import Templates from '../components/Resources/Templates.astro';
+---
+<Layout title="Resources – ELIAC">
+<!-- ═══════════════════════════════════════════
+     HERO
+═══════════════════════════════════════════ -->
+<section class="resources-hero">
+  <div class="contenedor hero-inner">
+    <div class="hero-text">
+      <h1>Build faster. Design smarter.
+      <br/>Accelerate further.</h1>
+      <p class="text-muted hero-desc">
+        Here you will find all the essential materials, templates, and guides to
+        support your project in the first edition of ELIAC. We provide the tools
+        you need to turn your vision into reality.
+      </p>
+    </div>
+    <div class="hero-illustration">
+    <img src="/WhatIsIt.png" alt="Descripción de la imagen" class="hero-svg" />
+  </div>
+  </div>
+
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══════════════════════════════════════════
+     DOCUMENTS + TEMPLATES
+═══════════════════════════════════════════ -->
+<section>
+  <div class="contenedor resources-layout">
+    <OfficialDocuments />
+    <Templates />
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══════════════════════════════════════════
+     CTA BOTTOM
+═══════════════════════════════════════════ -->
+<section class="cta-section">
+  <div class="contenedor cta-inner">
+    <h2>Join the science that<br/>drives the future.</h2>
+    <div class="scroll-indicator" aria-hidden="true">
+    </div>
+  </div>
+</section>
+
+</Layout>
+
+<style>
+/* ─── Hero ─────────────────────────────────────── */
+.resources-hero {
+  position: relative;
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.hero-inner {
+  display: grid;
+  align-items: center;
+  gap: var(--gap);
+  padding-bottom: 3rem;
+}
+
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
+
+.hero-desc {
+  font-size: var(--fs-h4);
+  max-width: 550px;
+}
+
+.hero-illustration {
+  display: flex;
+  justify-content: right;
+  align-items: right;
+}
+
+.hero-svg {
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+}
+
+.scroll-indicator {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 2rem;
+  opacity: 0.6;
+}
+
+/* ─── Two-column layout ─────────────────────────── */
+.resources-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  align-items: start;
+}
+
+/* ─── CTA ───────────────────────────────────────── */
+.cta-section {
+  text-align: center;
+}
+
+.cta-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+  padding-bottom: 3rem;
+}
+
+/* ─── Tablet ────────────────────────────────────── */
+@media (max-width: 1511px) {
+  .resources-layout { gap: 4rem; }
+}
+
+/* ─── Mobile ────────────────────────────────────── */
+@media (max-width: 480px) {
+  .hero-inner { grid-template-columns: 1fr; }
+  .hero-illustration { display: none; }
+  .hero-text { gap: 1.75rem; }
+  .resources-layout {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}
+</style>

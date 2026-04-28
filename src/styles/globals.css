@@ -15,11 +15,11 @@ html { font-size: 100%; scroll-behavior: smooth; }
   /* Typography */
   --ff-display: "Clash Grotesk", "Helvetica Neue", Helvetica, Arial, sans-serif;
   --ff-body:    "Schibsted Grotesk", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  
+
   --fs-h1:      6rem;      /* 96px */
   --fs-h2:      4rem;      /* 64px */
   --fs-h3:      3rem;      /* 48px */
-  --fs-h4:      2.25rem;   /* 36px */
+  --fs-h4:      2rem;   /* 36px */
   --fs-body:    1.75rem;   /* 28px */
   --fs-h5:      1.5rem;    /* 24px (Footer) */
   --fs-micro:   1.125rem;  /* 18px (Footer) */
@@ -28,11 +28,11 @@ html { font-size: 100%; scroll-behavior: smooth; }
   --c-dark:        #181823;
   --c-slate:       #313B4F;
   --c-blue-dark:   #203C89;
-  --c-blue-light:  #147EC2; 
-  --c-primary:     #5EC2D6; 
-  --c-green:       #00AA7A; 
-  --c-accent:      #FFED00; 
-  --c-white:       #FFFFFF; 
+  --c-blue-light:  #147EC2;
+  --c-primary:     #5EC2D6;
+  --c-green:       #00AA7A;
+  --c-accent:      #FFED00;
+  --c-white:       #FFFFFF;
 
   /* Mapeo de uso */
   --c-bg:          var(--c-dark);
@@ -122,8 +122,8 @@ h3 { font-size: var(--fs-h3); line-height: 1; }
   font-size: 1.125rem;
 }
 .btn-xl {
-  padding: 16px 32px;          
-  font-size: var(--fs-h5);   
+  padding: 16px 32px;
+  font-size: var(--fs-h5);
 }
 
 .btn-dark {
@@ -176,8 +176,8 @@ h3 { font-size: var(--fs-h3); line-height: 1; }
     color: var(--c-white);
     text-decoration: underline;
   }
-  .link:hover { 
-    color: var(--c-accent); 
+  .link:hover {
+    color: var(--c-accent);
   }
 /* ─── Reset de Imágenes ─── */
 img { width: 100%; height: auto; object-fit: cover; display: flex; }
@@ -292,7 +292,7 @@ img { width: 100%; height: auto; object-fit: cover; display: flex; }
     --fs-body:    1rem;     /* 16px */
     --fs-h5:      1.25rem;  /* 20px (Footer) */
     --fs-micro:   1rem;     /* 16px (Footer) */
-    
+
     --container: 90%;
     --nav-h:         3.75rem; /* 60px */
     --space-section: 3rem;

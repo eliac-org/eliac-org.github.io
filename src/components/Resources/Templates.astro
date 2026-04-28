@@ -1,0 +1,91 @@
+---
+// Templates.astro
+---
+
+<div class="resources-col">
+  <h2>Templates</h2>
+
+  <p class="section-intro text-muted">
+    Here you'll find the templates you need for the final submission. Work
+    on your ideas, and put them down here!
+  </p>
+
+  <div class="divider-inner"></div>
+
+  <div class="doc-item">
+    <h3 class="doc-title">Memory Template (PDF)</h3>
+    <p class="doc-desc text-muted">Descripción del documento, breve guión de contenido, etc.</p>
+    <a class="btn btn-dark" href="#">Download document</a>
+  </div>
+
+  <div class="divider-inner"></div>
+
+  <div class="doc-item">
+    <h3 class="doc-title">Memory Template (Word)</h3>
+    <p class="doc-desc text-muted">Descripción del documento, breve guión de contenido, etc.</p>
+    <a class="btn btn-dark" href="#">Download document</a>
+  </div>
+
+  <div class="divider-inner"></div>
+
+  <div class="doc-item">
+    <h3 class="doc-title">Memory Template (Latex)</h3>
+    <p class="doc-desc text-muted">Descripción del documento, breve guión de contenido, etc.</p>
+    <a class="btn btn-dark" href="#">Download document</a>
+  </div>
+
+  <div class="divider-inner"></div>
+
+  <div class="doc-item">
+    <h3 class="doc-title">Presentation Template (Recommended)</h3>
+    <p class="doc-desc text-muted">Descripción del documento, breve guión de contenido, etc.</p>
+    <a class="btn btn-dark" href="#">Download document</a>
+  </div>
+</div>
+
+<style>
+.resources-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.resources-col h2 {
+  margin-bottom: 2.5rem;
+}
+
+.section-intro {
+  font-size: 1rem;
+  line-height: 1.6;
+  max-width: 480px;
+  margin-bottom: 0;
+}
+
+.divider-inner {
+  width: 100%;
+  height: 1px;
+  background: rgba(255,255,255,0.1);
+  margin-block: 2rem;
+}
+
+.doc-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  align-items: flex-start;
+}
+
+.doc-title {
+  font-family: var(--ff-body);
+  font-size: var(--fs-h5);
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--c-white);
+}
+
+.doc-desc {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 0.25rem;
+}
+</style>
