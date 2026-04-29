@@ -198,7 +198,7 @@
 .mobile-backdrop {
   position: fixed;
   inset: 0;
-  z-index: 290;
+  z-index: 300;
   background: rgba(0, 0, 0, 0.5);
   opacity: 0;
   visibility: hidden;
@@ -214,7 +214,7 @@
 }
 
 /* ── Breakpoint 390px ───────────────────────────── */
-@media (max-width: 390px) {
+@media (max-width: 400px) {
   .nav-burger { display: flex; }
 }
 </style>
