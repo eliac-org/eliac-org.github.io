@@ -1,0 +1,129 @@
+---
+const FAQs = [
+{
+    question: "I do not have any previous experience with particle accelerators. Can I participate?",
+    answer:"Completar"
+},
+{
+    question: "Approximately how much time commitment is required?",
+    answer:"Completar"
+},
+{
+    question: "Is there a cost to participate?",
+    answer:"Completar"
+},
+{
+    question: "Can teams from different universities or countries participate?",
+    answer:"Completar"
+},
+{
+    question: "Can I participate individually?",
+    answer:"Completar"
+},
+{
+    question: "What is the official language of the competition?",
+    answer:"Completar"
+},
+{
+    question: "How are materials submitted?",
+    answer:"Completar"
+},
+{
+    question: "Do I need specific simulation software?",
+    answer:"Completar"
+}
+];
+---
+<section class="FAQs">
+    <section class="faq-container">
+        {FAQs.map((item)=> (
+            <div class="faq-group">
+                <div class="faq-item">
+                    <body class="body faq-question">
+                        {item.question}
+                    </body>
+                    <button class="faq-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                    </button>
+                </div>
+                <div class="faq-item faq-answer-block" style="display:none;">
+                    <p class="faq-answer">
+                        {item.answer}
+                    </p> </div>
+            </div>
+        ))}
+    </section>
+</section>
+
+
+<style>
+    .faq-item {
+        display: flex;
+        align-items: center;    /* Centra verticalmente el texto y el botón */
+        justify-content: space-between; /* Empuja el botón al final */
+        background-color: #1e2231;      /* Color oscuro de fondo */
+        padding: 15px 25px;
+        border-radius: 50px;            /* Bordes muy redondeados (píldora) */
+        margin-bottom: 10px;
+        gap: 20px;                      /* Espacio mínimo entre texto y botón */
+    }
+
+    .faq-question {
+        color: white;
+        margin: 0;
+        font-size: 1rem;
+        line-height: 1.4;
+        text-align: left;               /* El texto siempre a la izquierda */
+    }
+
+    .faq-answer {
+        color: #FFED00
+    }
+
+    .faq-toggle {
+        background-color: white;        /* El círculo blanco del botón */
+        border: none;
+        border-radius: 50%;             /* Lo hace circular */
+        width: 70px;
+        height: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        flex-shrink: 0;                 /* Evita que el botón se aplaste si el texto es largo */
+        color: #1e2231;                 /* Color de la flecha */
+    }
+    .faq-container {
+        padding-top: 200px;
+        padding-bottom: 160px;
+        width: 100%;
+        max-width: 1108px; /* Ajusta este ancho según tu diseño de Figma */
+        margin: 0 auto;   /* El "auto" en los lados empuja el bloque al centro */
+        }
+</style>
+
+<script>
+  const buttons = document.querySelectorAll('.faq-toggle');
+
+  buttons.forEach((button) => {
+    // Forzamos a que el botón se reconozca como un elemento con estilo
+    const btn = button as HTMLElement;
+
+    btn.addEventListener('click', () => {
+      const group = btn.closest('.faq-group');
+      
+      if (group) {
+        const answer = group.querySelector('.faq-answer-block') as HTMLElement;
+        
+        if (answer) {
+          const isHidden = answer.style.display === 'none';
+          
+          answer.style.display = isHidden ? 'flex' : 'none';
+          btn.style.transform = isHidden ? 'rotate(180deg)' : 'rotate(0deg)';
+          btn.style.backgroundColor = isHidden ? "#FFED00" : 'white';
+          btn.style.transition = 'transform 0.3s ease';
+        }
+      }
+    });
+  });
+</script>
