@@ -2,35 +2,35 @@
 const FAQs = [
 {
     question: "I do not have any previous experience with particle accelerators. Can I participate?",
-    answer:"Completar"
+    answer:"Yes. Prior experience in accelerator physics is not required. ELIAC is designed as a learning-driven challenge where teams combine different skills such as physics, engineering, programming, and simulation. Participants are encouraged to learn throughout the competition and collaborate with teammates and faculty advisors."
 },
 {
     question: "Approximately how much time commitment is required?",
-    answer:"Completar"
+    answer:"The time commitment depends on the scope and ambition of each team's project. Most teams typically work on the project alongside their studies during the academic year. On average, participants may dedicate a few hours per week during design phases, with more intensive work periods close to submission deadlines."
 },
 {
     question: "Is there a cost to participate?",
-    answer:"Completar"
+    answer:"Participation in ELIAC itself does not require a mandatory registration fee. However, teams are responsible for any costs associated with software licenses, hardware prototypes, or travel to the final event if they decide to attend in person."
 },
 {
     question: "Can teams from different universities or countries participate?",
-    answer:"Completar"
+    answer:"Yes. Teams can include members from multiple universities and even from different countries. In that case, the team must designate a **host university** and a **Faculty Advisor** affiliated with that institution."
 },
 {
     question: "Can I participate individually?",
-    answer:"Completar"
+    answer:"ELIAC is designed as a **team-based challenge**, since the development of a LINAC requires expertise from multiple disciplines. While individual participation is not recommended, very small teams may be accepted if they can demonstrate the ability to cover the required technical areas."
 },
 {
     question: "What is the official language of the competition?",
-    answer:"Completar"
+    answer:"The official language of the competition is **English**. All reports, presentations, and technical documentation must be submitted in English to ensure accessibility for the international jury and participants."
 },
 {
     question: "How are materials submitted?",
-    answer:"Completar"
+    answer:"Teams will submit their deliverables through the official ELIAC online submission platform. Materials may include technical reports, simulation results, presentations, posters, and supporting documentation according to the deadlines defined in the competition timeline."
 },
 {
     question: "Do I need specific simulation software?",
-    answer:"Completar"
+    answer:"Simulation is an essential part of the competition, but teams are free to choose the software they prefer. Both open-source and commercial tools are accepted, as long as the results can be properly validated and documented."
 }
 ];
 ---
@@ -62,10 +62,10 @@ const FAQs = [
         align-items: center;    /* Centra verticalmente el texto y el botón */
         justify-content: space-between; /* Empuja el botón al final */
         background-color: #1e2231;      /* Color oscuro de fondo */
-        padding: 15px 25px;
-        border-radius: 50px;            /* Bordes muy redondeados (píldora) */
-        margin-bottom: 10px;
-        gap: 20px;                      /* Espacio mínimo entre texto y botón */
+        padding: 0.9375rem 1.5625rem;
+        border-radius: 3.125rem;            /* Bordes muy redondeados (píldora) */
+        margin-bottom: 0.625rem;
+        gap: 1.25rem;                      /* Espacio mínimo entre texto y botón */
     }
 
     .faq-question {
@@ -84,8 +84,8 @@ const FAQs = [
         background-color: white;        /* El círculo blanco del botón */
         border: none;
         border-radius: 50%;             /* Lo hace circular */
-        width: 70px;
-        height: 70px;
+        width: 4.375rem;
+        height: 4.375rem;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -94,10 +94,10 @@ const FAQs = [
         color: #1e2231;                 /* Color de la flecha */
     }
     .faq-container {
-        padding-top: 200px;
-        padding-bottom: 160px;
+        padding-top: 12.5rem;
+        padding-bottom: 10rem;
         width: 100%;
-        max-width: 1108px; /* Ajusta este ancho según tu diseño de Figma */
+        max-width: 73.75rem; /* Ajusta este ancho según tu diseño de Figma */
         margin: 0 auto;   /* El "auto" en los lados empuja el bloque al centro */
         }
 </style>
@@ -114,10 +114,23 @@ const FAQs = [
       
       if (group) {
         const answer = group.querySelector('.faq-answer-block') as HTMLElement;
-        
+        const isHidden = answer.style.display === 'none';
+
+        if (isHidden) {
+          document.querySelectorAll('.faq-group').forEach((otherGroup) => {
+            const otherAnswer = otherGroup.querySelector('.faq-answer-block') as HTMLElement;
+            const otherBtn = otherGroup.querySelector('.faq-toggle') as HTMLElement;
+            const otherQuestion = otherGroup.querySelector('.faq-question') as HTMLElement;
+            if (otherAnswer) otherAnswer.style.display = 'none';
+            if (otherBtn) {
+                otherBtn.style.transform = 'rotate(0deg)';
+                otherBtn.style.backgroundColor = '#ffffff'; // Color original
+            }
+            if (otherQuestion) otherQuestion.style.color = '#ffffff'; // Color original
+          });
+        }
+
         if (answer) {
-          const isHidden = answer.style.display === 'none';
-          
           answer.style.display = isHidden ? 'flex' : 'none';
           btn.style.transform = isHidden ? 'rotate(180deg)' : 'rotate(0deg)';
           btn.style.backgroundColor = isHidden ? "#FFED00" : 'white';
