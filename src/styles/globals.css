@@ -204,7 +204,6 @@ img { width: 100%; height: auto; object-fit: cover; display: flex; }
   display: flex;
   flex-direction: column;
   gap: var(--gap, 2.5rem);
-  height: 100%;
   text-align: center;
 
   transition: box-shadow .25s ease;
@@ -300,7 +299,7 @@ img { width: 100%; height: auto; object-fit: cover; display: flex; }
   }
   .h2-margin { margin-bottom: 4.5rem; }
   .card {
-      flex: 0 0 85%;
+      flex: 0 0 100%;
       scroll-snap-align: center;
       min-height: 100%;
     }

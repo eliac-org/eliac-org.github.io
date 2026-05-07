@@ -40,6 +40,7 @@ const steps = [
     grid-template-columns: repeat(auto-fit,minmax(15rem, 1fr));
     justify-content:center;
     gap: 1rem;
+    align-items: stretch;
   }
   .card-number {
     font-family: var(--ff-display);
@@ -49,6 +50,8 @@ const steps = [
   @media (max-width: 1511px) {
     .slider-movil {
       grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+      align-items: stretch;
+
     }
   }
 
@@ -62,6 +65,8 @@ const steps = [
       justify-content: flex-start;
       scrollbar-width: none;
       -ms-overflow-style: none;
+      align-items: stretch;
+
     }
     .slider-movil::-webkit-scrollbar { 
       display: none; 
