@@ -262,7 +262,7 @@ img { width: 100%; height: auto; object-fit: cover; display: flex; }
   }
   .h2-margin { margin-bottom: 4.5rem; }
   .card {
-      flex: 0 0 85%;
+      flex: 0 0 100%;
       scroll-snap-align: center;
       min-height: 100%;
     }
