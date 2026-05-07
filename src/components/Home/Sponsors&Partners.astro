@@ -1,0 +1,39 @@
+---
+// Sponsors&Partners.astro
+---
+
+<section class="contenedor" aria-labelledby="sponsors-title">
+
+  <h2 class="h2-margin" id="sponsors-title">Sponsors & Partners</h2>
+
+  <div class="sponsors-content">
+    <p class="text-muted">
+      Interested in sponsoring this event?<br/>
+      Complete the form below or send an e-mail to
+      <a class="link" href="mailto:eliac@innovaphysicupv.com">
+         eliac@innovaphysicupv.com
+      </a>
+    </p>
+    
+    <a class="btn btn-lg btn-slate " href="https://tally.so/r/aQ5VJB">
+  Partner with Us
+</a>
+  </div>
+
+</section>
+
+<style>
+
+  .sponsors-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; 
+    gap: var(--gap);
+    max-width: 65ch;
+  }
+  @media (max-width: 480px){
+    .sponsors-content .btn {
+      align-self: center;
+    }
+  }
+</style>

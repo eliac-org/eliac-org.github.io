@@ -1,30 +1,119 @@
 ---
-import '../styles/globals.css';
+// pages/Home.astro
+import WhatIsIt from '../components/Home/WhatIsIt.astro';
+import HowELIACWorks from '../components/Home/HowELIACWorks.astro';
+import Purpose from '../components/Home/Goals&Purpose.astro';
+import TheTeamBehindIt from '../components/Home/TheTeamBehindIt.astro';
+import Prizes from '../components/Home/Prizes&Benefits.astro';
+import Sponsors from '../components/Home/Sponsors&Partners.astro';
 ---
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<div class="app-root">
-      <header class="top-nav" aria-label="site navigation">
-        <nav>
-          <ul class="nav-list">
-            <li>
-              <a class="nav-link"
-                href="https://innova-physics-upv.github.io"
-                target="_blank"
-                rel="noopener noreferrer">
-                About us
-              </a>
-            </li>
-            <li><a class="nav-link"  href="NormativaEliac.pdf" target="_blank" rel="noopener noreferrer ">Handbook</a></li>
-          </ul>
-        </nav>
-      </header>
 
-      <main class="content" role="main">
-        <div class="site-grid">
-          <h1>ELIAC</h1>
-          <h2>European Linear Accelerator Challenge</h2>
-          <div class="cta-wrap">
-            <button class="cta" onclick="window.open('https://tally.so/r/mVrdGN', '_blank')">Enroll</button>          </div>
-        </div>
-      </main>
-    </div>
+  <section class="hero">
+
+  <video
+    class="hero-video"
+    autoplay
+    muted
+    playsinline
+  >
+    <source src="/landingvideo.mp4" type="video/mp4" />
+  </video>
+
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content">
+    <h1 class="hero__title" id="hero-title">
+      Design the next generation of compact linear accelerators.
+    </h1>
+  </div>
+
+</section>
+
+  <div class="divider"></div>
+
+  <WhatIsIt />
+
+  <div class="divider"></div>
+
+  <HowELIACWorks />
+
+  <div class="divider"></div>
+
+  <Purpose />
+
+  <div class="divider"></div>
+
+  <TheTeamBehindIt />
+
+  <div class="divider"></div>
+
+  <Prizes />
+
+  <div class="divider"></div>
+
+  <Sponsors />
+
+<style>
+  .hero {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.4),
+    rgba(0,0,0,0.6)
+  );
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  max-width: 900px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+
+  text-align: center;
+  color: white;
+
+  animation: fadeUp 1.2s ease-out;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-content h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+}
+
+.hero-content p {
+  font-size: 1.25rem;
+  opacity: 0.9;
+}
+</style>

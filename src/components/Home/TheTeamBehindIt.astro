@@ -1,0 +1,63 @@
+---
+// TheTeamBehindIt.astro
+---
+
+<section class="contenedor team-section" aria-labelledby="team-title">
+  <h2 id="team-title" class="h2-margin">The team behind it</h2>
+
+  <img 
+    src="/team.jpg" 
+    alt="Integrantes del equipo Innova Physics UPV" 
+    class="team-image"
+  />
+
+  <div class="team-content flow">
+    <p class="lead-text">
+      Meet Innova Physics UPV, a team from Generación
+      Espontánea, the Design Factory of Universitat
+      Politècnica de València.
+    </p>
+    
+    <p class="text-muted">
+      Innova Physics UPV is a student-led engineering and research initiative founded at
+      the Universitat Politècnica de València (UPV). The team focuses on the design,
+      development, and dissemination of advanced projects in accelerator physics and
+      related technologies.
+    </p>
+  </div>
+  <img 
+    src="/LogoInnova.svg"
+    class="logo" 
+    alt="Logo de Innova Physics UPV"   
+  />
+</section>
+
+<style>
+  .team-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: var(--gap);
+  }
+
+  .team-image {
+    border-radius: 30px;
+  }
+
+  .team-content {
+    max-width: 90ch;
+  }
+
+  .lead-text {
+    font-family: var(--ff-display);
+    font-size: var(--fs-h3);
+  }
+
+  /* Ajuste para móviles */
+  @media (max-width: 480px) {
+    .team-image { 
+      min-height: 220px;
+    }
+  }
+</style>

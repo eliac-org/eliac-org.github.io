@@ -1,0 +1,62 @@
+---
+// Prizes&Benefits.astro
+
+const prizes = [
+  {
+    title: "Hands-on Learning:",
+    text: "Work on real accelerator concepts beyond the classroom.",
+  },
+  {
+    title: "Networking:",
+    text: "Connect with students, mentors and professionals from labs and industry.",
+  },
+  {
+    title: "Portfolio / CV:",
+    text: "Showcase your work in front of experts — perfect for your CV, MSc/PhD or job applications.",
+  },
+  {
+    title: "Recognition & prizes:",
+    text: "Awards, visibility and potential collaboration opportunities. Prizes for the winners are still to be determined and will be announced in a near future.",
+  },
+];
+---
+
+<section class="contenedor" aria-labelledby="prizes-title">
+
+  <div class="grid-split">
+    
+    <div class="content-left">
+      <h2 id="prizes-title" class="h2-margin">Prizes & Benefits</h2>
+      
+      <ul class="prizes-list">
+        {prizes.map((item) => (
+          <li>
+            <strong>{item.title}</strong> {item.text}
+          </li>
+        ))}
+      </ul>
+    </div>
+
+    <div class="img">
+      <img src="/prizes.png" alt="Illustration of a linear accelerator">
+    </div>
+
+  </div>
+
+</section>
+
+<style>
+  .content-left {
+    /* Ancho máximo de lectura cómodo, reemplaza a los 625px rígidos */
+    max-width: 65ch; 
+  }
+
+  .prizes-list {
+    list-style-type: square;
+    padding-left: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+</style>
