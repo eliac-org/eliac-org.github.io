@@ -1,0 +1,82 @@
+---
+// HeroHome.astro
+---
+<section class="hero">
+  <video
+    class="hero-video"
+    autoplay
+    muted
+    playsinline
+  >
+    <source src="/landingvideo.mp4" type="video/mp4" />
+  </video>
+
+  <div class="hero-content">
+    <h1 class="hero_title" id="hero-title">
+      Design the next generation of compact linear accelerators.
+    </h1>
+  </div>
+</section>
+<img src="/DividerIcon.svg" class="divider-icon">   </img>
+<section class = "contenedor">
+  <header class="text-muted welcome_to_eliac">
+    <p>Welcome to ELIAC;</p>
+    <p>the <b>European Linear Accelerator Challenge</b> for</p>
+    <p>students in physics and engineering.</p>
+  </header>
+</section>
+<style>
+  .hero {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  max-width: 900px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+
+  text-align: center;
+  color: white;
+
+  animation: fadeUp 1.2s ease-out;
+}
+.welcome_to_eliac{ text-align: center;}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-content h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+}
+
+.hero-content p {
+  font-size: 1.25rem;
+  opacity: 0.9;
+}
+</style>
