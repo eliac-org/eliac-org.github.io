@@ -15,110 +15,90 @@ const sections = [
 ];
 ---
 
-<section class="criteria-outer-wrapper">
-  <div class="criteria-content">
-    <h2 class="section-title">Criteria & Requirements</h2>
-    
-    <div class="three-column-layout">
-      {sections.map((section) => (
-        <div class="criteria-column">
-          <h3>{section.title}</h3>
-          <ul>
-            {section.items.map((item, index) => (
-              <li>
-                <span class="index">{index + 1}.</span>
-                <p>{item}</p>
-              </li>
-            ))}
-          </ul>
-        </div>
-      ))}
-    </div>
+<section class="contenedor">
+  <h2 class="h2-margin responsive-text">Criteria & Requirements</h2>
+  
+  <div class="grid-split items-start">
+    {sections.map((section) => (
+      <div>
+        <h4 class="responsive-text criteria-title">
+          {section.title}
+        </h4>
+        <ul class="criteria-list">
+          {section.items.map((item, index) => (
+            <li class="criteria-item">
+              <span class="criteria-number">{index + 1}.</span>
+              <p>{item}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
+    ))}
+  </div>
 
-    <div class="download-footer">
-      <p>Learn about all the regulations in the full document about the challenge:</p>
-      <a href="/NormativaEliac.pdf" class="download-button" download>Download full briefing</a>
-    </div>
+  <div class="flow text-center download-section">
+    <p class="download-text">
+      Learn about all the regulations in the full document about the challenge:
+    </p>
+    <a href="/NormativaEliac.pdf" class="btn btn-slate btn-xl" download>Download full briefing</a>
   </div>
 </section>
 
 <style>
-  /* Aseguramos que el fondo sea total y no un rectángulo cortado */
-  .criteria-outer-wrapper {
-    
-    width: 100%;
-    color: white;
-    padding: 100px 0;
-    display: block; /* Forzamos que se comporte como bloque */
-  }
-
-  .criteria-content {
-    max-width: 1240px;
-    margin: 0 auto;
-    padding: 0 40px;
-  }
-
-  .section-title {
-    font-size: 2.5rem;
+  .responsive-text {
     text-align: center;
-    margin-bottom: 80px;
   }
 
-  .three-column-layout {
-  display: grid !important;
-  grid-template-columns: repeat(3, 1fr) !important; /* 3 columnas iguales */
-  gap: 40px !important;
-  width: 100% !important;
-  max-width: 1200px;
-  margin: 0 auto;
-  }
-
-  .criteria-column h3 {
-    font-size: 1.1rem;
+  .criteria-title {
+    font-family: var(--ff-display);
+    font-weight: 500;
+    font-size: var(--fs-h4); /* 36px */
+    line-height: 1; /* 36px */
     text-decoration: underline;
-    text-underline-offset: 10px;
-    margin-bottom: 30px;
+    text-decoration-style: solid;
+    text-underline-offset: 0%;
+    text-decoration-skip-ink: auto;
+    margin-bottom: 3rem;
+  }
+
+  .criteria-list {
+    list-style: none;
+  }
+
+  .criteria-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem; 
+    margin-bottom: 1.5rem;
+    
+    font-family: var(--ff-body);
+    font-weight: 500;
+    font-size: var(--fs-body); /* 28px */
+    line-height: 1.2; /* ~34px */
+    opacity: 0.85; 
+  }
+
+  .criteria-number {
+    flex-shrink: 0; 
+  }
+
+  .criteria-item p {
+    margin: 0;
+  }
+
+  .download-section {
+    margin-top: 6rem;
+  }
+
+  .download-text {
+    font-family: var(--ff-display);
+    font-size: 1.25rem; /* 20px */
     font-weight: 500;
   }
 
-  ul { list-style: none; padding: 0; }
-  
-  li {
-    display: flex;
-    gap: 15px;
-    margin-bottom: 20px;
-    align-items: flex-start;
-  }
-
-  .index { font-weight: bold; }
-  
-  p {
-    margin: 0;
-    font-size: 0.95rem;
-    opacity: 0.8;
-    line-height: 1.5;
-  }
-
-  .download-footer {
-    text-align: center;
-    margin-top: 100px;
-  }
-
-  .download-button {
-    display: inline-block;
-    background-color: #1e222d;
-    color: white;
-    padding: 12px 35px;
-    border-radius: 100px;
-    text-decoration: none;
-    margin-top: 20px;
-    border: 1px solid rgba(255,255,255,0.1);
-  }
-
-  /* Si la pantalla es muy pequeña, entonces sí permitimos 1 columna */
-  @media (max-width: 1000px) {
-    .three-column-layout {
-      grid-template-columns: 1fr !important;
+  @media (max-width: 480px) {
+    .responsive-text {
+      text-align: left;
     }
   }
 </style>
