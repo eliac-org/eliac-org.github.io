@@ -1,72 +1,14 @@
 ---
+import HeroChallenge from '../components/Challenge/HeroChallenge.astro'
 import Timeline from '../components/Challenge/Timeline.astro';
 import CriteriaRequirements from '../components/Challenge/Criteria&Requirements.astro';
 import InternationalJury from '../components/Challenge/InternationalJury.astro';
+
 ---
 
-<main class="challenge-page-wrapper">
-  <section class="challenge-hero">
-    <div class="hero-content">
-      <h1>Follow the challenge from first spark to near-light speed.</h1>
-    </div>
-  </section>
-
-  <div class="divider"></div>
-
-  <Timeline />
-
-  <div class="divider"></div>
-
-  <div class="full-width-container">
-    <CriteriaRequirements />
-  </div>
-
-  <div class="divider"></div>
-
-  <InternationalJury />
+<main>
+<HeroChallenge/>
+<Timeline/>
+<CriteriaRequirements />
+<InternationalJury />
 </main>
-
-<style>
-  .challenge-page-wrapper {
-    background-color: #181823;
-    width: 100%;
-    min-height: 100vh;
-  }
-
-  .challenge-hero {
-    padding: 120px 20px 60px 20px;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-  }
-
-  .hero-content {
-    max-width: 850px;
-  }
-
-  h1 {
-    font-size: clamp(2.5rem, 5vw, 4rem);
-    color: white;
-    line-height: 1.1;
-    margin-bottom: 1.5rem;
-  }
-
-  p {
-    color: white;
-    font-size: 1.2rem;
-    opacity: 0.9;
-    line-height: 1.5;
-  }
-
-  .divider {
-    height: 1px;
-    background: rgba(255, 255, 255, 0.1);
-    width: 80%;
-    margin: 40px auto;
-  }
-
-  .full-width-container {
-    width: 100%;
-    display: block; /* Importante para que el grid interior funcione */
-  }
-</style>
