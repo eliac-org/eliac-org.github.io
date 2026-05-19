@@ -4,8 +4,7 @@
 const events = [
   { 
     date: "April 1st, 2026", 
-    title: "ELIAC 26 Kick-off", 
-    subtitle: "Registration Opening", 
+    title: "ELIAC 26 Kick-off Registration Opening", 
     desc: "Complete with important information about this step of the competition"
   },  
   { 
@@ -53,13 +52,10 @@ const events = [
       {events.map((event) => (
         <div class="timeline-item">
           <p class="date">{event.date}</p>
-          
-          <!-- El círculo que se alinea con la barra -->
           <div class="dot"></div>
           
           <div class="content flow">
             <h4 class="title">{event.title}</h4>
-            {event.subtitle && <span class="text-muted subtitle">{event.subtitle}</span>}
             <p class="text-muted">{event.desc}</p>
             
             {event.extraTitle && (
