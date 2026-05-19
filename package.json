@@ -7,11 +7,12 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-  "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
-    "@astrojs/svelte": "^8.0.0",
+    "@astrojs/svelte": "^8.1.1",
     "astro": "^6.0.2",
-    "svelte": "^5.53.10"
+    "svelte": "^5.55.8",
+    "typescript": "^6.0.3"
   }
 }
