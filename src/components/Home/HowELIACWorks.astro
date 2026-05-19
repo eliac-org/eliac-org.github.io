@@ -25,7 +25,7 @@ const steps = [
 
   <div class="slider-movil">
     {steps.map((step) => (
-      <div class="card">
+      <div class="card info-card">
         <span class="card-number">{step.number}</span>
         <h3 class="card-title">{step.title}</h3>
         <p class="card-text">{step.text}</p>
@@ -35,28 +35,80 @@ const steps = [
 </section>
 
 <style>
-  .slider-movil {
+  /* ─── Tarjeta Info (Efectos Glassmorphism y Hover) ───── */
+.info-card {
+  background-color: color-mix(in srgb, var(--c-white) 5%, transparent);
+  padding: 2.5rem 2rem;
+  gap: var(--gap, 2.5rem);
+  text-align: center;
+  
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid color-mix(in srgb, var(--c-white) 8%, transparent);
+  transition: box-shadow 0.25s ease;
+}
+
+.info-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--c-white) 14%, transparent),
+    color-mix(in srgb, var(--c-white) 4%, transparent) 40%,
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+.info-card::after {
+  content: "";
+  position: absolute;
+  inset: -6px;
+  border-radius: inherit;
+  background: linear-gradient(
+    120deg,
+    var(--c-blue-light),
+    var(--c-accent)
+  );
+  opacity: 0;
+  filter: blur(80px);
+  z-index: -1;
+  transition: opacity 2s ease;
+}
+
+.info-card:hover {
+  box-shadow: 0 16px 32px color-mix(in srgb, var(--c-dark) 80%, transparent);
+}
+
+.info-card:hover::after {
+  opacity: 0.6;
+}
+
+.slider-movil {
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(15rem, 1fr));
     justify-content:center;
     gap: 1rem;
     align-items: stretch;
   }
-  .card-number {
+  
+.card-number {
     font-family: var(--ff-display);
     font-size: var(--fs-h4);
     font-weight: 600;
   }
-  @media (max-width: 1511px) {
-    .slider-movil {
+@media (max-width: 1511px) {
+  .slider-movil {
       grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
       align-items: stretch;
 
     }
   }
 
-  @media (max-width: 480px) {
-    .slider-movil {
+@media (max-width: 480px) {
+  .slider-movil {
       display: flex;
       overflow-x: auto;
       scroll-snap-type: x mandatory;
@@ -68,7 +120,7 @@ const steps = [
       align-items: stretch;
 
     }
-    .slider-movil::-webkit-scrollbar { 
+  .slider-movil::-webkit-scrollbar { 
       display: none; 
     }
   }
