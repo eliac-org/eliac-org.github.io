@@ -1,0 +1,102 @@
+---
+const sections = [
+  {
+    title: "Participant Requirements",
+    items: ["Each participant may be a member of one team only", "Only undergraduate or master's degree students are eligible", "Participants may compete for maximum five cycles", "Team members must be at least 18 years old"]
+  },
+  {
+    title: "Team Composition",
+    items: ["Each team must designate one Team Captain as primary contact", "Teams may have maximum 50 members", "Members organize internally by skills and project needs", "At least one Faculty Advisor required per team"]
+  },
+  {
+    title: "Institutional Limitations",
+    items: ["Each university may register one official team only", "Multi-university teams permitted under single host institution", "Teams must develop projects independently", "Faculty advisors limited to mentorship role only"]
+  }
+];
+---
+
+<section class="contenedor">
+  <h2 class="h2-margin text-center">Criteria & Requirements</h2>
+  
+  <div class="grid-split items-start">
+    {sections.map((section) => (
+      <div>
+        <h4 class="text-center criteria-title">
+          {section.title}
+        </h4>
+        <ul class="criteria-list">
+          {section.items.map((item, index) => (
+            <li class="criteria-item">
+              <span class="criteria-number">{index + 1}.</span>
+              <p>{item}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
+    ))}
+  </div>
+
+  <div class="flow text-center download-section">
+    <p class="download-text">
+      Learn about all the regulations in the full document about the challenge:
+    </p>
+    <a href="/NormativaEliac.pdf" class="btn btn-slate btn-xl" download>Download full briefing</a>
+  </div>
+</section>
+
+<style>
+  .responsive-text {
+    text-align: center;
+  }
+
+  .criteria-title {
+    font-family: var(--ff-display);
+    font-weight: 500;
+    font-size: var(--fs-h4); /* 36px */
+    line-height: 1; /* 36px */
+    text-decoration: underline;
+    margin-bottom: 3rem;
+  }
+
+  .criteria-list {
+    list-style: none;
+  }
+
+  .criteria-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem; 
+    margin-bottom: 1.5rem;
+    
+    font-family: var(--ff-body);
+    font-weight: 500;
+    font-size: var(--fs-body); /* 28px */
+    line-height: 1.2; /* ~34px */
+    opacity: 0.85; 
+  }
+
+  .criteria-number {
+    flex-shrink: 0; 
+  }
+
+  .criteria-item p {
+    margin: 0;
+  }
+
+  .download-section {
+    margin-top: 6rem;
+  }
+
+  .download-text {
+    font-family: var(--ff-display);
+    font-size: 1.25rem; /* 20px */
+    font-weight: 500;
+    padding: 1rem;
+  }
+
+  @media (max-width: 480px) {
+    .responsive-text {
+      text-align: left;
+    }
+  }
+</style>

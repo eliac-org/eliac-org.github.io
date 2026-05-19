@@ -1,0 +1,160 @@
+---
+// Timeline.astro
+
+const events = [
+  { 
+    date: "April 1st, 2026", 
+    title: "ELIAC 26 Kick-off Registration Opening", 
+    desc: "Complete with important information about this step of the competition"
+  },  
+  { 
+    date: "November 13th, 2026", 
+    title: "ELIAC 26 Registration Closure", 
+    desc: "Complete with important information about this step of the competition",
+    extraTitle: "ELIAC 27 Registration Opening", 
+    extraDesc: "Complete with important information about this step..." 
+  }, 
+  { 
+    date: "January 31st, 2027", 
+    title: "ELIAC 27 Registration Closure", 
+    desc: "Complete with important information about this step of the competition"
+  },
+  { 
+    date: "March 1st, 2027", 
+    title: "Preliminary Design Report", 
+    desc: "Complete with important information..." 
+  },
+  { 
+    date: "April 13th, 2027", 
+    title: "Intermediate Review", 
+    desc: "Complete with important information..." 
+  }, 
+  { 
+    date: "May 31st, 2027", 
+    title: "Final Documentation", 
+    desc: "Complete with important information..." 
+  },
+  { 
+    date: "July 20th-25th, 2027", 
+    title: "Competition Event", 
+    desc: "Complete with important information..." 
+  }
+];
+---
+
+<section class="contenedor">
+  <h2 class="h2-margin">Format & Phases</h2>
+  
+  <div class="timeline-container">
+    <div class="main-line"></div>
+    
+    <div class="timeline-items">
+      {events.map((event) => (
+        <div class="timeline-item">
+          <p class="date">{event.date}</p>
+          <div class="dot"></div>
+          
+          <div class="content flow">
+            <h4 class="title">{event.title}</h4>
+            <p class="text-muted">{event.desc}</p>
+            
+            {event.extraTitle && (
+              <div class="extra flow" style="margin-top: 2rem;">
+                <h4 class="title">{event.extraTitle}</h4>
+                <p class="text-muted">{event.extraDesc}</p>
+              </div>
+            )}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .timeline-container { 
+    position: relative; 
+  }
+  
+  .main-line {
+    position: absolute;
+    left: 15.625rem; 
+    top: 0; 
+    bottom: 0;
+    width: 3.125rem; 
+    background: linear-gradient(180deg, #313B4F 0%, #203C89 19%, #147EC2 38%, #5EC2D6 57%, #00AA7A 76%, #FFED00 95%);
+    border-radius: 9999px;
+  }
+
+  .timeline-items {
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+    padding-block: 2rem;
+  }
+
+  .timeline-item { 
+    display: grid; 
+    grid-template-columns: 13.125rem 3.125rem 1fr; 
+    gap: var(--gap); 
+    align-items: start;
+    position: relative;
+    z-index: 1; 
+  }
+
+  .date { 
+    text-align: right; 
+  }
+  
+  .dot {
+    width: 1.875rem; /* 30px */
+    height: 1.875rem;
+    background-color: var(--c-white);
+    border-radius: 50%;
+    justify-self: center; 
+    margin-top: 0.25rem; 
+  }
+
+  .content { 
+    padding-top: 0.25rem;
+  }
+
+  .title { 
+    font-family: var(--ff-display);
+    font-size: var(--fs-h4);
+    font-weight: 500;
+  }
+
+  .subtitle { 
+    display: block;
+  }
+
+  /* Mobile */
+  @media (max-width: 480px) {
+    .main-line {
+      left: 0;
+      width: 1.25rem; /* 20px */
+    }
+
+    .timeline-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      padding-left: 2.5rem;
+    }
+
+    .dot {
+      position: absolute;
+      left: 0.25rem; 
+      top: 0.35rem; 
+      width: 0.75rem;
+      height: 0.75rem;
+      margin-top: 0;
+    }
+
+    .date {
+      text-align: left;
+      width: 100%;
+    }
+  }
+</style>

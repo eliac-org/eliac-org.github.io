@@ -1,0 +1,92 @@
+---
+// OfficialDocuments.astro
+---
+
+<div class="resources-col">
+  <h2>Official Documents</h2>
+
+  <p class="section-intro text-muted">
+    Access a foundational introduction to accelerator physics and a curated
+    list of recommended resources. This is a great starting point, but from
+    here on, the sky is the limit: get ready to research and learn!
+  </p>
+
+  <div class="divider-inner"></div>
+
+  <div class="doc-item">
+    <h3 class="doc-title">Accelerator physics (student level)</h3>
+    <p class="doc-desc text-muted">Descripción del documento, breve guión de contenido, etc.</p>
+    <a class="btn btn-dark" href="#">Download document</a>
+  </div>
+
+  <div class="divider-inner"></div>
+
+  <div class="doc-item">
+    <h3 class="doc-title">CERN Website</h3>
+    <p class="doc-desc text-muted">Descripción del documento, breve guión de contenido, etc.</p>
+    <a class="btn btn-dark" href="#" target="_blank" rel="noopener">Visit Website</a>
+  </div>
+
+  <div class="divider-inner"></div>
+
+  <div class="doc-item">
+    <h3 class="doc-title">MOOC courses</h3>
+    <p class="doc-desc text-muted">Descripción del documento, breve guión de contenido, etc.</p>
+    <a class="btn btn-dark" href="#">Download document</a>
+  </div>
+
+  <div class="divider-inner"></div>
+
+  <div class="doc-item">
+    <h3 class="doc-title">Free Notes</h3>
+    <p class="doc-desc text-muted">Descripción del documento, breve guión de contenido, etc.</p>
+    <a class="btn btn-dark" href="#">Download document</a>
+  </div>
+</div>
+
+<style>
+.resources-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.resources-col h2 {
+  margin-bottom: 2.5rem;
+}
+
+.section-intro {
+  font-size: 1rem;
+  line-height: 1.6;
+  max-width: 100%;
+  margin-bottom: 0;
+}
+
+.divider-inner {
+  width: 100%;
+  height: 1px;
+  background: rgba(255,255,255,0.1);
+  margin-block: 2rem;
+}
+
+.doc-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  align-items: flex-start;
+}
+
+.doc-title {
+  font-family: var(--ff-body);
+  font-size: var(--fs-h5);
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--c-white);
+}
+
+.doc-desc {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 0.25rem;
+}
+</style>
