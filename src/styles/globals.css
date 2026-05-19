@@ -1,4 +1,7 @@
-/* ─── Reset ─────────────────────────────────────────────── */
+/* ─── Google Fonts import ───────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&display=swap');
+
+
 *, *::before, *::after {
   margin: 0;
   padding: 0;
@@ -7,8 +10,6 @@
 
 html { font-size: 100%; scroll-behavior: smooth; }
 
-/* ─── Google Fonts import ───────────────────────────────── */
-@import url('https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&display=swap');
 
 /* ─── Design Tokens — Desktop (min-width: 1512px) ──────── */
 :root {
@@ -44,7 +45,6 @@ html { font-size: 100%; scroll-behavior: smooth; }
   --gap: 2.5rem;
   --nav-h:         5rem;
 
-
   /* Spacing scale */
   --space-section: 6rem;
   --space-section-inline: clamp(1.25rem, 4vw, 2.5rem);
@@ -70,8 +70,17 @@ h1 { font-size: var(--fs-h1); line-height: 0.92; letter-spacing: -0.03em; }
 h2 { font-size: var(--fs-h2); line-height: 1;    letter-spacing: -0.02em; }
 h3 { font-size: var(--fs-h3); line-height: 1; }
 .h2-margin { margin-bottom: 7.5rem; }
+
+
 /* ─── Utilidades ────────────────────────────────────────── */
 
+
+.subtitle {
+  font-family: var(--ff-display); /* Equivalente a Clash Grotesk */
+  font-weight: 400;
+  font-size: var(--fs-h3);        /* Equivalente a 48px (3rem) */
+  text-align: center;  
+}
 .text-muted {
   opacity: 0.85;
   line-height: 1.6;
@@ -86,6 +95,62 @@ h3 { font-size: var(--fs-h3); line-height: 1; }
   align-items: center;
 }
 
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.items-start { align-items: flex-start; }
+
+/* ─── hero ──────────────────────────────*/
+  .hero {
+  position: relative;
+  height: 100dvh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.hero-video {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  max-width: 900px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  text-align: center;
+  color: white;
+  animation: fadeUp 1.2s ease-out;
+}
+
+
+.hero-content h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+}
+
+.hero-content p {
+  font-size: 1.25rem;
+  opacity: 0.9;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 /* ─── Contenedor ───────────────────────────────────────── */
 .contenedor {
   width: 100%;
@@ -192,74 +257,19 @@ img { width: 100%; height: auto; object-fit: cover; display: flex; }
 .card {
   position: relative;
   overflow: hidden;
-
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(8px);
-
   border-radius: 30px;
-  padding: 2.5rem 2rem;
-
-  border: 1px solid color-mix(in srgb, var(--c-white) 8%, transparent);
-
   display: flex;
   flex-direction: column;
-  gap: var(--gap, 2.5rem);
-  text-align: center;
-
-  transition: box-shadow .25s ease;
 }
 
-.card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-
-  background: linear-gradient(
-    180deg,
-    color-mix(in srgb, var(--c-white) 14%, transparent),
-    color-mix(in srgb, var(--c-white) 4%, transparent) 40%,
-    transparent 70%
-  );
-
-  pointer-events: none;
-}
-
-.card::after {
-  content: "";
-  position: absolute;
-  inset: -6px;
-  border-radius: inherit;
-
-  background: linear-gradient(
-    120deg,
-    var(--c-blue-light),
-    var(--c-accent)
-  );
-
-  opacity: 0;
-  filter: blur(80px);
-  z-index: -1;
-
-  transition: opacity 2s ease;
-}
-
-.card:hover {
-  box-shadow: 0 16px 32px rgba(0,0,0,0.22);
-}
-
-.card:hover::after {
-  opacity: 0.6;
-}
-
-  .card-title {
+.card-title {
     font-size: var(--fs-h4);
     font-weight: 500;
-  }
-  .card-text {
+}
+.card-text {
     font-size: var(--fs-h5);
     font-weight: 600;
-  }
+}
 
 /* ─── Divider ───────────────────────────────────────────── */
 .divider {
@@ -270,6 +280,11 @@ img { width: 100%; height: auto; object-fit: cover; display: flex; }
   max-width: var(--container);
 }
 
+.divider-icon{
+  max-width: 6rem;
+  margin-inline: auto;
+
+}
 /* ─── Tablet ────────────────────────────── */
 @media (max-width: 1511px) {
   :root {
