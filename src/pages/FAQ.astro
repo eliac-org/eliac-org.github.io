@@ -1,52 +1,13 @@
 ---
-import CommonQ from '../components/FAQ/CommonQ.astro';
+import CommonQ from '../components/FAQ/CommonQ.svelte';
 import GotQuestions from '../components/FAQ/GotQuestions.astro';
 import OtherQ from '../components/FAQ/OtherQ.astro';
+import Layout from '../layouts/Layout.astro';
 ---
 
-<main class="faq-page-wrapper">
-    <section class="faq-hero">
-        <div class="hero-content">
-            <h1>Frequently Asked Questions</h1>
-        </div>
-    </section>
+<Layout>
 
-    <GotQuestions />
-
-    <div class="divider"></div>
-
-    <CommonQ />
-
-    <div class="divider"></div>
-
-    <OtherQ />
-
-    <div class="divider"></div>
-
-</main>
-
-<style>
-    .faq-page-wrapper {
-        background-color: #181823;
-        width: 100%;
-        min-height: 100vh;
-        justify-content: center;
-    }
-    .faq-hero {
-        padding: 11.125rem 12.625rem 7.375rem 12.625rem;
-        display: flex;
-        justify-content: center;
-        text-align: center;
-    }
-
-    .hero-content {
-        max-width: 69.25rem;
-    }
-
-    h1 {
-        font-size: clamp(2rem, 8vw, 6rem);
-        color: white;
-        line-height: 1.1;
-        margin-bottom: 1.5rem;   
-    }
-</style>
+  <GotQuestions />
+  <CommonQ client:visible />
+  <OtherQ />
+</Layout>

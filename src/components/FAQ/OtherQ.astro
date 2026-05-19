@@ -1,71 +1,31 @@
-<section class="text-muted questions_text">
-    <div class="hero-content">
-        <h4>If you have any other question that is not resolved</h4>
-        <h4>here, click in the button and write it down. We will</h4>     
-        <h4>answer you with all the information you need.</h4>     
-    </div>
-</section>
-
-<section class="SendQ">
-  <div class="download-footer">
-    <a href="mailto:eliac2027@gmail.com" class="download-button" style="display: inline-flex; align-items: center; text-decoration: none;">
+<section class="contenedor text-center">
+  
+  <div class="contact-block">
+    <p class="subtitle">
+      If you have any other question that is not resolved<br/>
+      here, click in the button and write it down. We will<br/>
+      answer you with all the information you need.
+    </p>
+    <a href="mailto:eliac2027@gmail.com" class="btn btn-lg btn-light">
       Send question
-      <svg 
-        xmlns="http://www.w3.org/2000/svg" 
-        width="30" 
-        height="30" 
-        viewBox="0 0 24 24" 
-        fill="none" 
-        stroke="currentColor" 
-        stroke-width="2" 
-        stroke-linecap="round" 
-        stroke-linejoin="round" 
-        style="margin-left: 20px; transform: rotate(270deg);"
-      >
+      <svg class="icon-rotated" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <path d="m6 9 6 6 6-6"/>
       </svg>
     </a>
   </div>
 </section>
 
-<section class="text questions_text">
-    <div class="hero-content">
-        <h4>Join the science that</h4>
-        <h4>drives the future.</h4>     
-    </div>
-</section>
-
-
-
 <style>
-    .questions_text{
-        text-align: center; 
-        color: white;
-        padding-bottom: 6.25rem;
-        padding-top: 10rem;
-    }
+  .contact-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5rem; 
+  }
 
-    .SendQ{
-        text-align: center;
-        padding-bottom: 21.25rem;
-    }
-
-    .download-button {
-        text-align:center;
-        display: inline-block;
-        background-color: white;
-        color: black;
-        padding: 0.75rem 2.1875rem;
-        border-radius: 6.25rem;
-        text-decoration: none;
-        margin-top: 1.25rem;
-        border: 1px solid rgba(255,255,255,0.1);
-    }
-
-    .download-button:hover {
-    background-color: #ffcc00; /* El amarillo que prefieras */
-    transform: scale(1.05);    /* Opcional: hace que el botón crezca un poquito */
-    cursor: pointer;
-    }
-
+  .icon-rotated {
+    width: 24px;
+    height: 24px;
+    transform: rotate(270deg);
+  }
 </style>
