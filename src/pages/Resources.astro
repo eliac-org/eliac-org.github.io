@@ -1,155 +1,60 @@
 ---
 // Resources.astro
-import Layout from '../layouts/Layout.astro';
+import HeroResources from '../components/Resources/HeroResources.astro';
 import OfficialDocuments from '../components/Resources/OfficialDocuments.astro';
 import Templates from '../components/Resources/Templates.astro';
+import Layout from '../layouts/Layout.astro';
 ---
-<Layout title="Resources – ELIAC">
-<!-- ═══════════════════════════════════════════
-     HERO
-═══════════════════════════════════════════ -->
-<section class="resources-hero">
-  <div class="contenedor hero-inner">
-    <div class="hero-text">
-      <h1>Build faster. Design smarter.
-      <br/>Accelerate further.</h1>
-      <p class="text-muted hero-desc">
-        Here you will find all the essential materials, templates, and guides to
-        support your project in the first edition of ELIAC. We provide the tools
-        you need to turn your vision into reality.
-      </p>
+
+<Layout>
+  <HeroResources/>
+
+  <section class="contenedor">
+    <div class="resources-layout">
+      <div class="col-left">
+        <OfficialDocuments />
+      </div>
+      <div class="col-right">
+        <Templates />
+      </div>
     </div>
-    <div class="hero-illustration">
-    <img src="/Resources.png" alt="Descripción de la imagen" class="hero-svg" />
-  </div>
-  </div>
-
-</section>
-
-<div class="divider"></div>
-
-<!-- ═══════════════════════════════════════════
-     DOCUMENTS + TEMPLATES
-═══════════════════════════════════════════ -->
-<section>
-  <div class="contenedor resources-layout">
-    <div class="col-left">
-      <OfficialDocuments />
-    </div>
-    <div class="col-right">
-      <Templates />
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- ═══════════════════════════════════════════
-     CTA BOTTOM
-═══════════════════════════════════════════ -->
-<section class="cta-section">
-  <div class="contenedor cta-inner">
-    <h2>Join the science that<br/>drives the future.</h2>
-    <div class="scroll-indicator" aria-hidden="true">
-    </div>
-  </div>
-</section>
+  </section>
 
 </Layout>
 
 <style>
-/* ─── Hero ─────────────────────────────────────── */
-.resources-hero {
-  position: relative;
-  min-height: 60vh;
-  display: flex;
-  align-items: center;
-  overflow: hidden;
-}
-
-.hero-inner {
-  display: flex;
-  justify-content: space-between;
-  position: relative;
-  z-index: 2;
-  align-items: center;
-  width; 100%;
-}
-
-.hero-text {
-  font-size: var(--fs--h1);
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  position: relative;
-  z-index: 3;
-}
-
-.hero-desc {
-  font-size: var(--fs-h4);
-  max-width: 550px;
-}
-
-.hero-illustration {
-  position: absolute;
-  top: 50%;
-  right: 0;
-  z-index: 1;
-  transform: translateY(-50%);
-  pointer-events: none;
-}
-
-.hero-svg {
-  width: 100%;
-  max-width: 500px;
-  height: auto;
-  object-fit: contain;
-  opacity: 0.8;
-}
-
-.scroll-indicator {
-  display: flex;
-  justify-content: center;
-  padding-bottom: 2rem;
-  opacity: 0.6;
-}
-
-/* ─── Two-column layout ─────────────────────────── */
-.resources-layout {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 6rem;
-  align-items: start;
-}
-.col-right {
-  margin-top: 65rem;
-}
-
-/* ─── CTA ───────────────────────────────────────── */
-.cta-section {
-  text-align: center;
-}
-
-.cta-inner {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 3rem;
-  padding-bottom: 3rem;
-}
-
-/* ─── Tablet ────────────────────────────────────── */
-@media (max-width: 1511px) {
-  .resources-layout { gap: 4rem; }
-}
-
-/* ─── Mobile ────────────────────────────────────── */
-@media (max-width: 480px) {
-  .hero-illustration {
-    display: none; /* Como ya tenías, o puedes bajarle la opacidad al 0.2 */
+  /* ─── Layout Dinámico Escalonado ──────────────────────── */
+  .resources-layout {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 10rem; /* Separación horizontal */
+    row-gap: 3rem; /* Separación vertical entre el final de la izq y el inicio de la der */
   }
-  .hero-text {
-    text-align: left;
+
+  .col-left {
+    grid-column: 1; /* Columna izquierda */
+    grid-row: 1;    /* Fila superior */
   }
-}
+
+  .col-right {
+    grid-column: 2; /* Columna derecha */
+    grid-row: 2;    /* Fila inferior (Empieza exactamente donde acaba la Fila 1) */
+  }
+
+
+  /* ─── Tablet ────────────────────────────────────── */
+  @media (max-width: 1511px) {
+    .resources-layout { column-gap: 4rem; }
+  }
+
+  /* ─── Mobile ────────────────────────────────────── */
+  @media (max-width: 768px) {
+    .resources-layout {
+      grid-template-columns: 1fr; /* Una sola columna */
+    }
+    
+    .col-right {
+      grid-column: 1; /* Forzamos a que vuelva a la única columna disponible */
+    }
+  }
 </style>

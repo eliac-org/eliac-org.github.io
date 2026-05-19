@@ -8,13 +8,13 @@ const jurors = [
   { name: "Jacob Niklaus", role: "Physicist at CERN and executive producer at IFIC since 2018", img: "/team.jpg" },
 ];
 ---
-<section class="jury-section">
-  <h2>International jury</h2>
-  <p class="subtitle">From Spain to Finland, these are the experts who will assess your project at ELIAC27.</p>
+<section class="contenedor">
+  <h2 class="h2-margin text-center">International jury</h2>
+  <h4 class="text-muted text-center">From Spain to Finland, these are the experts who will assess your project at ELIAC27.</h4>
   
   <div class="jury-grid">
     {jurors.map((juror) => (
-      <div class="jury-card">
+      <div class="card jury-card">
         <div class="img-container">
           <img src={juror.img} alt={juror.name} />
         </div>
@@ -28,30 +28,29 @@ const jurors = [
 </section>
 
 <style>
-  .jury-section { padding: 80px 20px; text-align: center; color: white; }
-  h2 { font-size: 2.5rem; margin-bottom: 10px; }
-  .subtitle { opacity: 0.8; margin-bottom: 50px; max-width: 600px; margin-inline: auto; }
+  /* ─── Contenedor Grid ────────────────────────────────── */
+.jury-grid {
+  display: flex;
+  gap: var(--gap);
+  overflow-x: auto;
+  padding-bottom: 20px;
+  justify-content: center;
+}
 
-  .jury-grid {
-    display: flex;
-    gap: 20px;
-    overflow-x: auto; /* Para que sea scrollable en móvil */
-    padding-bottom: 20px;
-    justify-content: center;
-  }
+/* ─── Tarjeta Jurado ─────────────────────────────────── */
+.jury-card {
+  min-width: 220px;
+  background-color: color-mix(in srgb, var(--c-white) 8%, transparent); 
+  text-align: left;
+  transition: transform 0.3s ease;
+  border-radius: 15px;
+}
 
-  .jury-card {
-    min-width: 220px;
-    background: #1a1a1a;
-    border-radius: 15px;
-    overflow: hidden;
-    text-align: left;
-    transition: transform 0.3s ease;
-  }
+.jury-card:hover { 
+  transform: translateY(-5px); 
+}
 
-  .jury-card:hover { transform: translateY(-5px); }
-
-  .img-container img {
+.img-container img {
     width: 100%;
     height: 250px;
     object-fit: cover;
@@ -60,4 +59,21 @@ const jurors = [
   .info { padding: 15px; }
   .info h3 { font-size: 1.1rem; margin: 0; }
   .info p { font-size: 0.8rem; opacity: 0.7; margin-top: 5px; line-height: 1.3; }
+
+/* ─── Comportamiento deslizante en móvil ──────── */
+@media (max-width: 480px) {
+  .jury-grid {
+    justify-content: flex-start;
+    scroll-snap-type: x mandatory;
+    scroll-padding-left: var(--space-section-inline);
+  }
+
+  .jury-card {
+    flex: 0 0 85%;
+    scroll-snap-align: center;
+    min-height: 100%;
+  }
+}
+
+
 </style>
