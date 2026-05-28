@@ -1,0 +1,79 @@
+---
+// src/components/Challenge/InternationalJury.astro
+const jurors = [
+  { name: "Jacob Niklaus", role: "Physicist at CERN and executive producer at IFIC since 2018", img: "/team.jpg" },
+  { name: "Jacob Niklaus", role: "Physicist at CERN and executive producer at IFIC since 2018", img: "/team.jpg" },
+  { name: "Jacob Niklaus", role: "Physicist at CERN and executive producer at IFIC since 2018", img: "/team.jpg" },
+  { name: "Jacob Niklaus", role: "Physicist at CERN and executive producer at IFIC since 2018", img: "/team.jpg" },
+  { name: "Jacob Niklaus", role: "Physicist at CERN and executive producer at IFIC since 2018", img: "/team.jpg" },
+];
+---
+<section class="contenedor">
+  <h2 class="h2-margin text-center">International jury</h2>
+  <h4 class="text-muted text-center">From Spain to Finland, these are the experts who will assess your project at ELIAC27.</h4>
+  
+  <div class="jury-grid">
+    {jurors.map((juror) => (
+      <div class="card jury-card">
+        <div class="img-container">
+          <img src={juror.img} alt={juror.name} />
+        </div>
+        <div class="info">
+          <h3>{juror.name}</h3>
+          <p>{juror.role}</p>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
+
+<style>
+  /* ─── Contenedor Grid ────────────────────────────────── */
+.jury-grid {
+  display: flex;
+  gap: var(--gap);
+  overflow-x: auto;
+  padding-bottom: 20px;
+  justify-content: center;
+}
+
+/* ─── Tarjeta Jurado ─────────────────────────────────── */
+.jury-card {
+  min-width: 220px;
+  background-color: color-mix(in srgb, var(--c-white) 8%, transparent); 
+  text-align: left;
+  transition: transform 0.3s ease;
+  border-radius: 15px;
+}
+
+.jury-card:hover { 
+  transform: translateY(-5px); 
+}
+
+.img-container img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+  }
+
+  .info { padding: 15px; }
+  .info h3 { font-size: 1.1rem; margin: 0; }
+  .info p { font-size: 0.8rem; opacity: 0.7; margin-top: 5px; line-height: 1.3; }
+
+/* ─── Comportamiento deslizante en móvil ──────── */
+@media (max-width: 480px) {
+  .jury-grid {
+    justify-content: flex-start;
+    scroll-snap-type: x mandatory;
+    scroll-padding-left: var(--space-section-inline);
+  }
+
+  .jury-card {
+    flex: 0 0 85%;
+    scroll-snap-align: center;
+    min-height: 100%;
+  }
+}
+
+
+</style>

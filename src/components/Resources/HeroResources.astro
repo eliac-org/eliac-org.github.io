@@ -1,0 +1,68 @@
+---
+// HeroResources.astro
+---
+
+<!-- El propio section hace de Grid -->
+<section class="resources-hero contenedor">
+  
+  <div class="hero-text">
+    <h1 >Build faster. Design smarter.<br/>Accelerate further.</h1>
+    <p class="subtitle-resources">
+      Here you will find all the essential materials, templates, and guides to
+      support your project in the first edition of ELIAC. We provide the tools
+      you need to turn your vision into reality.
+    </p>
+  </div>
+  
+  <!-- La imagen suelta, sin contenedor extra -->
+  <img src="/Resources.png" alt="" class="hero-svg" />
+
+</section>
+
+<div class="divider"></div>
+
+<style>
+  .resources-hero {
+    min-height: 60vh;
+    display: grid;
+  }
+
+  .hero-text, .hero-svg {
+    grid-area: 1 / 1;
+  }
+.subtitle-resources {
+      max-width: 25ch;
+
+  font-family: var(--ff-display); /* Clash Grotesk */
+  font-weight: 400;
+  font-size: var(--fs-h3);        /* Equivalente a 48px (3rem) */
+margin-top: auto;
+}
+
+  /* ─── PC (Alineados a los extremos, se pisan si falta espacio) ─── */
+  .hero-text {
+    justify-self: start; /* Texto pegado a la izquierda */
+    z-index: 2;          /* Texto por encima */
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .hero-svg {
+    max-width: 35ch;
+    justify-self: end;   /* Imagen pegada a la derecha */
+    z-index: 1;          /* Imagen por debajo */
+    pointer-events: none;
+  }
+
+  /* ─── Móvil / Tablet (Centramos todo y bajamos opacidad) ─── */
+  @media (max-width: 768px) {
+    .hero-text {
+      justify-self: center;
+      text-align: center;
+    }
+    .hero-svg {
+      justify-self: center;
+    }
+  }
+</style>

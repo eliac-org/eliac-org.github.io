@@ -1,0 +1,13 @@
+---
+import CommonQ from '../components/FAQ/CommonQ.svelte';
+import GotQuestions from '../components/FAQ/GotQuestions.astro';
+import OtherQ from '../components/FAQ/OtherQ.astro';
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout>
+
+  <GotQuestions />
+  <CommonQ client:visible />
+  <OtherQ />
+</Layout>

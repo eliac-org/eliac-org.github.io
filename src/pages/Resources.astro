@@ -1,0 +1,60 @@
+---
+// Resources.astro
+import HeroResources from '../components/Resources/HeroResources.astro';
+import OfficialDocuments from '../components/Resources/OfficialDocuments.astro';
+import Templates from '../components/Resources/Templates.astro';
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout>
+  <HeroResources/>
+
+  <section class="contenedor">
+    <div class="resources-layout">
+      <div class="col-left">
+        <OfficialDocuments />
+      </div>
+      <div class="col-right">
+        <Templates />
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  /* ─── Layout Dinámico Escalonado ──────────────────────── */
+  .resources-layout {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 10rem; /* Separación horizontal */
+    row-gap: 3rem; /* Separación vertical entre el final de la izq y el inicio de la der */
+  }
+
+  .col-left {
+    grid-column: 1; /* Columna izquierda */
+    grid-row: 1;    /* Fila superior */
+  }
+
+  .col-right {
+    grid-column: 2; /* Columna derecha */
+    grid-row: 2;    /* Fila inferior (Empieza exactamente donde acaba la Fila 1) */
+  }
+
+
+  /* ─── Tablet ────────────────────────────────────── */
+  @media (max-width: 1511px) {
+    .resources-layout { column-gap: 4rem; }
+  }
+
+  /* ─── Mobile ────────────────────────────────────── */
+  @media (max-width: 768px) {
+    .resources-layout {
+      grid-template-columns: 1fr; /* Una sola columna */
+    }
+    
+    .col-right {
+      grid-column: 1; /* Forzamos a que vuelva a la única columna disponible */
+    }
+  }
+</style>
